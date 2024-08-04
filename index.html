@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Popup Iframe Example</title>
     <style>
-        #popupIframe {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: none;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            background-color: #fff;
-            transition: transform 0.3s ease-in-out;
+        html {
+            overflow: auto;
         }
 
-        #popupIframe.active {
-            transform: translate(-50%, -50%) scale(1.05);
+        html,
+        body,
+        div,
+        iframe {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            border: none;
         }
 
-        #iframe {
-            width: 800px;
-            height: 610px;
+
+
+        iframe {
+            display: block;
+            width: 100%;
             border: none;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
     </style>
 </head>
@@ -33,13 +35,14 @@
 <body>
 
     <div id="popupIframe">
-        <iframe id="iframe" frameborder="0"></iframe>
+        <iframe id="iframe" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%"
+            scrolling="auto"></iframe>
     </div>
     <script>
         var urls = [
 
-            'https://play.famobi.com/wrapper/bubble-tower-3d/A1000-10',
-            'https://play.famobi.com/wrapper/bubble-tower-3d/A1000-10',
+            'https://doondook.studio/games/bubble-up/v1.0.5/',
+            'https://doondook.studio/games/bubble-up/v1.0.5/',
 
         ];
         var currentIndex = 0;
